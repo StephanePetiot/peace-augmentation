@@ -1,0 +1,4 @@
+include src/peace_augmentation/words_lists/entities_list.json
+include src/peace_augmentation/words_lists/scalarity.json
+include src/peace_augmentation/words_lists/special_tokens.json
+include src/peace_augmentation/words_lists/speculative.json

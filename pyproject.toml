@@ -4,36 +4,41 @@ build-backend = "setuptools.build_meta"
 
 [project]
 name = "peace-augmentation"
-version = "0.0.3"
+version = "0.0.25"
 authors = [
   { name="Nicolás Benjamín Ocampo", email="nicolasbenjaminocampo@gmail.com" },
   { name="Greta Damo", email="greta.damo@inria.fr" },
   { name="Stéphane Petiot", email="stephane.petiot@hotmail.fr" },
 ]
-# maintainers = [
-#   { name="Nicolás Benjamín Ocampo", email="nicolasbenjaminocampo@gmail.com" },
-#   { name="Greta Damo", email="greta.damo@inria.fr" },
-#   { name="Stéphane Petiot", email="stephane.petiot@hotmail.fr" },
-# ]
+maintainers = [
+  { name="Nicolás Benjamín Ocampo", email="nicolasbenjaminocampo@gmail.com" },
+  { name="Greta Damo", email="greta.damo@inria.fr" },
+  { name="Stéphane Petiot", email="stephane.petiot@hotmail.fr" },
+]
 description = "PEACE method Augmentation package"
 readme = "README.md"
 requires-python = ">=3.8"
-# classifiers = [
-#     "Development Status :: 4 - Beta",
-#     "Intended Audience :: Data Scientists",
-#     "Topic :: Data Science :: NLP Tools",
-#     "Programming Language :: Python :: 3",
-#     "License :: OSI Approved :: BSL-1.0 license",
-#     "Operating System :: OS Independent",
-# ]
-# keywords = [
-#     "peace",
-#     "augmentation",
-#     "peace-augmentation",
-#     "hate",
-#     "hate speech",
-#     "Providing Explanation and Analysis for Combating Hate Expressions",
-# ]
+classifiers = [
+    "Development Status :: 4 - Beta",
+    "Intended Audience :: Information Technology",
+    "Intended Audience :: Science/Research",
+    "Topic :: Scientific/Engineering :: Artificial Intelligence",
+    "Topic :: Scientific/Engineering :: Information Analysis",
+    "Topic :: Scientific/Engineering :: Mathematics",
+    "Topic :: Software Development :: Libraries :: Python Modules",
+    "Topic :: Text Processing",
+    "Programming Language :: Python :: 3",
+    "License :: OSI Approved :: Boost Software License 1.0 (BSL-1.0)",
+    "Operating System :: OS Independent",
+]
+keywords = [
+    "peace",
+    "augmentation",
+    "peace-augmentation",
+    "hate",
+    "hate speech",
+    "Providing Explanation and Analysis for Combating Hate Expressions",
+]
 dependencies = [
     "nltk",
     "flair[word-embeddings]",
@@ -49,4 +54,4 @@ Issues = "https://github.com/StephanePetiot/peace-augmentation/issues"
 where = ["src"]
 
 [tool.setuptools.package-data]
-peace_augmentation = ["words_lists/*.json",]
+"peace_augmentation.words_lists" = ["*.json"]
