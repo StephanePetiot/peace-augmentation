@@ -4,7 +4,7 @@ build-backend = "setuptools.build_meta"
 
 [project]
 name = "peace-augmentation"
-version = "0.0.25"
+version = "0.0.26"
 authors = [
   { name="Nicolás Benjamín Ocampo", email="nicolasbenjaminocampo@gmail.com" },
   { name="Greta Damo", email="greta.damo@inria.fr" },
