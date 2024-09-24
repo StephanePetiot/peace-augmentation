@@ -6,7 +6,7 @@ PEACE stands for Providing Explanation and Analysis for Combating Hate Expressio
 - Machine Learning Identification: Employment of sophisticated machine learning classifiers to accurately detect instances of hate speech.
 - Explanation Generation: Articulation of clear, understandable explanations concerning why particular messages are classified as hateful.
 
-This repository is only including the **augmentation** extension. The code of the [PEACE augmentation web app]() can be found [here]()
+This repository is only including the **augmentation** extension. The code of the [PEACE augmentation web app](https://3ia-demos.inria.fr/peace/) can be found [here](https://gitlab.inria.fr/nocampo/peace/)
 
 ## Installation Instructions
 
