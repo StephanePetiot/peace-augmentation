@@ -40,10 +40,10 @@ keywords = [
     "Providing Explanation and Analysis for Combating Hate Expressions",
 ]
 dependencies = [
-    "nltk",
-    "flair[word-embeddings]",
-    "torch",
-    "scipy",
+    "nltk==3.8.1",
+    "flair[word-embeddings]==0.14.0",
+    "torch==2.4.1",
+    "scipy==1.13.1",
 ]
 
 [project.urls]
