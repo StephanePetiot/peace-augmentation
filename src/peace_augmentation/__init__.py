@@ -15,12 +15,14 @@ from .replace_named_entities import find_closest_embeddings, get_word_vector
 from .utils import (  # add_exp_to_sent,; vectors_list,
     fasttext_doc_emb,
     get_synonyms,
+    add_exp_to_sent,
     replace_exp_to_sent,
     scalarity_list,
     special_tokens,
     speculative_list,
     tagger_ner,
     tagger_pos,
+    vectors_list
 )
 
 
