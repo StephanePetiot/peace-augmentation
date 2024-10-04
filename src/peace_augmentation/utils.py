@@ -4,6 +4,7 @@ from typing import List
 
 from flair.embeddings import DocumentPoolEmbeddings, WordEmbeddings
 from flair.models import SequenceTagger
+from flair.data import Sentence
 from nltk.corpus import wordnet
 
 # Stopwords list. We know that libraries like spicy or nltk have their own lists
@@ -169,6 +170,14 @@ tagger_ner = SequenceTagger.load("ner")
 fasttext_emb = WordEmbeddings("en")
 fasttext_doc_emb = DocumentPoolEmbeddings([fasttext_emb])
 
+vectors_list = {}
+for key in entities_list.keys():
+    vectors_list[key] = {}
+    for word in entities_list[key]:
+        word_ = Sentence(word)
+        fasttext_doc_emb.embed(word_)
+        vectors_list[key][word] = word_.embedding.to("cpu")
+
 
 def get_synonyms(word: str, pos: str = None, only_hyponyms: bool = False) -> List[str]:
     """
@@ -236,3 +245,29 @@ def replace_exp_to_sent(sent: str, exp: str, start_pos: int, end_pos: int) -> st
         example (str) modification of `sent` with the replacement of `exp`.
     """
     return sent[:start_pos] + exp + sent[end_pos:]
+
+def add_exp_to_sent(sent: str,
+                    exp: str,
+                    start_pos: int,
+                    end_pos: int,
+                    where: str = "before") -> str:
+    """
+    Given a sentence `sent`, an expression `exp`, and offsets `start_pos`,
+    `end_pos`, the function adds `exp` to `sent` before `start_pos` if `where ==
+    'before'` or after `end_pos` if `where == 'after'`.
+
+    paramters:
+        - `sent` (str) sentence to expand.
+        - `exp` (str) expression to add.
+        - `start_pos` (int) index of `sent`.
+        - `end_pos` (int) index of `sent`.
+        - `where (str) values "before" or "after".
+
+    returns:
+        example (str) modification of `sent` with the addition of `exp`.
+    """
+    if where == "before":
+        example = (sent[:start_pos] + exp + " " + sent[start_pos:])
+    elif where == "after":
+        example = (sent[:end_pos] + " " + exp + " " + sent[end_pos:])
+    return example
