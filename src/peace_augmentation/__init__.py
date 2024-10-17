@@ -15,12 +15,14 @@ from .replace_named_entities import find_closest_embeddings, get_word_vector
 from .utils import (  # add_exp_to_sent,; vectors_list,
     fasttext_doc_emb,
     get_synonyms,
+    add_exp_to_sent,
     replace_exp_to_sent,
     scalarity_list,
     special_tokens,
     speculative_list,
     tagger_ner,
     tagger_pos,
+    vectors_list
 )
 
 
@@ -45,6 +47,9 @@ class Augmentation:
         self.text = text
 
     def apply(self, method, **kwargs):
+        results = eval(f"self.{method}")(self.text, **kwargs)
+        if results == []:
+            return [self.text]
         return eval(f"self.{method}")(self.text, **kwargs)
 
     def easy_data_augmentation(
@@ -323,6 +328,7 @@ class Augmentation:
                 for change in candidates
             ]
             adv_examples.extend(examples)
+
         return adv_examples
 
     def replace_named_entities(self, sent: str, cand_ner_name: str = "MISC", nof_repl_p_cand: int = 2) -> List[str]:
@@ -383,4 +389,5 @@ class Augmentation:
 
                 # Collect all augmented sentences.
                 adv_examples.extend(examples)
+
         return adv_examples
