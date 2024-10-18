@@ -15,7 +15,7 @@ To set up the peace-augmentation app on your local system, you can install it us
 pip install peace-augmentation
 ```
 
-## Usage
+## Usage
 
 To use it in one of your project, you have to use the `Augmentation` class:
 ```
