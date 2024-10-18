@@ -31,12 +31,15 @@ result = aug.apply(augmentation_method)
 print(result)
 ```
 
+The detailed docs are available [here](https://peace-augmentation.readthedocs.io/en/latest/) (WIP)
+
 ### Args reference
 Depending on the method, you can specify a few arguments listed below:
 
 *TO DO*
 
 ### Method reference
+
 Here is a list of the different augmentation methods available with their description:
 
 | Identifier | Name | Description |
